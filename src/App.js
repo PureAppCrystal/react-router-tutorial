@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Home, About } from 'pages';
 import Menu from 'components/Menu';
 import './App.css';
+import { Posts } from './pages';
 
 const App = () => {
   return (
@@ -10,7 +11,10 @@ const App = () => {
       <Menu/>
       <Route exact path="/" component={Home}/>
       {/* <Route exact path="/about" component={About}/> */}
-      <Route path="/about/:name?" component={About}/>
+      <Switch>
+        <Route path="/about/:name?" component={About}/>
+      </Switch>
+      <Route path="/posts" component={Posts}/>
     </div>
   )
 }
